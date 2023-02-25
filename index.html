@@ -7,6 +7,11 @@
     <link href="project.css" rel="stylesheet"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Julian Villega</title>
+    <meta name="twitter:card" content="summary"/>
+    <meta name="twitter:title" content="Julian Villega CV, desarrollador" />
+    <meta name="twitter:description" content="Estudiante anvanzado en la carrera Analista de Sistemas Programador Universitario de la UNLP" />
+    <meta name="twitter:image" content="https://e497-190-188-235-202.sa.ngrok.io/profile2.jpg" />
+    <meta name="twitter:site" content="https://e497-190-188-235-202.sa.ngrok.io" />
 </head>
 <header>
     <img src="profile2.jpg" alt="Profile picture" class="mx-auto d-block rounded"/>    
@@ -16,26 +21,26 @@
     <script src="comportamiento.js" defer></script>
     <section>
         <h1 class="display-1 text-center">Julian Villega</h1>
-        <div class="container text-center">
+        <div class="container">
             <div class="row justify-content-center gap-3">
-                <div class="col-sm-5  border">
-                    <h2>Formación</h2>
-                    <dl>
-                        <dt>Formación Academica:</dt>
-                        <dd>Actualmente me encuentro en el ultimo año de la carrera Analista de sistemas programador universitario de la UNLP</dd>
-                        <dt>Idiomas:</dt>
-                        <dd>Portugues nativo<br>Español nativo<br>Ingles intermedio</dd>
+                <div class="col-sm-5 border">
+                    <h2 class="text-center">Formación</h2>
+                    <dl class="row text-start px-3">
+                        <dt class="col-sm-5">Formación Academica:</dt>
+                        <dd class="col-sm-7">Actualmente me encuentro en el ultimo año de la carrera Analista de sistemas programador universitario de la UNLP</dd>
+                        <dt class="col-sm-5">Idiomas:</dt>
+                        <dd class="col-sm-7">Portugues nativo<br>Español nativo<br>Ingles intermedio</dd>
                     </dl>
                 </div>
                 <div class="col-sm-5 border">
-                    <h2>Información personal</h2>
-                    <dl class="row">
-                        <dt class="col-sm-3">Nombre:</dt>
-                        <dd class="col-sm-9">Julian Villega</dd>
-                        <dt class="col-sm-3">Edad:</dt>
-                        <dd class="col-sm-9">25 años</dd>
-                        <dt class="col-sm-3">Nacionalidad:</dt>
-                        <dd class="col-sm-9">Argentina</dd>
+                    <h2 class="text-center">Información personal</h2>
+                    <dl class="row justify-content-between text-start px-3">
+                        <dt class="col-sm-5">Nombre:</dt>
+                        <dd class="col-sm-5">Julian Villega</dd>
+                        <dt class="col-sm-5">Edad:</dt>
+                        <dd class="col-sm-5">25 años</dd>
+                        <dt class="col-sm-5">Nacionalidad:</dt>
+                        <dd class="col-sm-5">Argentina</dd>
                     </dl>
                 </div>                
             </div>            
@@ -48,7 +53,7 @@
         <div class="row justify-content-center gap-3" id="proyectos-row">            
             <div class="col border" id="col-detalle" hidden>
                 <h5 id="titulo-detalle" class="text-center">Un Proyecto</h5>
-                <hr>
+                <hr class="mt-0">
                 <p id="cuerpo-detalle">En este proyecto use las tecnologias 1,2 y 3 ....</p>
                 <hr>
                 <button class="btn btn-primary mb-3" id="btn-cerrar-detalle">Cerrar</button>
