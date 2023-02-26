@@ -12,6 +12,7 @@
 //         alternar_visibilidad_detalle()
 //     })
 // }
+let esta_el_tema_claro = false;
 
 proyectos = 
     [
@@ -34,6 +35,27 @@ document.getElementById('btn-cerrar-detalle').addEventListener('click', function
     alternar_visibilidad_proyectos()
     alternar_visibilidad_detalle()
 })
+$('#btn-alternar-tema').click(function(){
+    alternar_tema()
+})
+
+//alterna entre el tema claro y oscuro de boostrap
+function alternar_tema(){
+    let html_tag = $('html')[0];
+    let btn_alternar_tema = $('#btn-alternar-tema')[0];
+    btn_alternar_tema.removeChild(btn_alternar_tema.children[0]);
+    if(esta_el_tema_claro){
+        //poner tema oscuro
+        html_tag.setAttribute('data-bs-theme','dark')
+        btn_alternar_tema.appendChild($.parseHTML('<i class="fa-solid fa-sun"></i>')[0])
+    }
+    else{
+        //poner tema claro
+        html_tag.setAttribute('data-bs-theme','light')
+        btn_alternar_tema.appendChild($.parseHTML('<i class="fa-solid fa-moon"></i>')[0])
+    }
+    esta_el_tema_claro = !esta_el_tema_claro
+}
 
 function alternar_visibilidad_proyectos(){
     let proyectos = document.getElementsByClassName('proyecto');
