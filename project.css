@@ -1,3 +1,34 @@
-.equal-columns{
+/* .equal-columns{
     flex:1;
+}
+
+#display-heading-proyectos{
+    text-decoration: underline 5%;
+    text-decoration-color: rgb(255,193,7);
+} */
+
+#hr-proyectos{
+    width: 60%;
+    margin: 0 auto;
+    color: rgb(255,193,7);
+    position: relative;
+    top: 0px;
+    border: none;
+    height: 5px;
+    background: rgb(255,193,7);
+    margin-bottom: 50px;
+    opacity: 100%; 
+}
+
+#hr-actividades{
+    width: 80%;
+    margin: 0 auto;
+    color: rgb(255,193,7);
+    position: relative;
+    top: 0px;
+    border: none;
+    height: 5px;
+    background: rgb(255,193,7);
+    margin-bottom: 50px;
+    opacity: 100%; 
 }
