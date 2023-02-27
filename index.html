@@ -58,14 +58,18 @@
         </div>
     </section>
     <div class="my-3">
-        <h4 class="display-4 text-center">Proyectos</h2>
+        <h4 class="display-4 text-center">Proyectos Personales</h2>
     </div>
+    <!-- En este div se cargan mis proyectos personales, esto se hace a través de JS -->
     <div class="container">
         <div class="row justify-content-center gap-3" id="proyectos-row">            
+            <!-- Esta columna se usa para mostrar la descripción detallada de un proyecto, 
+            Por defecto se crea oculta, y cuando necesario se la pobla con los datos de un proyecto y se la exhibe.
+            Esto se hace a través de JS-->
             <div class="col border" id="col-detalle" hidden>
-                <h5 id="titulo-detalle" class="text-center">Un Proyecto</h5>
+                <h5 id="titulo-detalle" class="text-center"></h5>
                 <hr class="mt-0">
-                <p id="cuerpo-detalle">En este proyecto use las tecnologias 1,2 y 3 ....</p>
+                <p id="cuerpo-detalle"></p>
                 <hr>
                 <button class="btn btn-primary mb-3" id="btn-cerrar-detalle">Cerrar</button>
             </div>
