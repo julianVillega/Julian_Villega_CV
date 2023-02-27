@@ -1,18 +1,32 @@
+//Implemento la funcionalidad para alternar entre el tema claro y oscuro
 
-//configuro el comprtamiento de los botones de los proyectos.
-//esta dificil establecer una relacion entre los botones y los datos de un proyecto en particular.
-//quiza seria mas sencillo modelar los proyectos como objetos con titulo descripcion, descripcion breve etc..
-// //y crear los cards de los proyectos atraves de js. ademas esta seria una solucion reutilizable y mas flexible ...
-// let btns_detalles = document.getElementsByClassName("btn-mas-detalles")
-// for (let b of btns_detalles){
-//     console.log('agregamos evento')
-//     b.addEventListener('click', function(){
-//         poblar_detalle('titulo','desc')
-//         alternar_visibilidad_proyectos()
-//         alternar_visibilidad_detalle()
-//     })
-// }
 let esta_el_tema_claro = false;
+//alterna entre el tema claro y oscuro de boostrap
+function alternar_tema(){
+    let html_tag = $('html')[0];
+    let btn_alternar_tema = $('#btn-alternar-tema')[0];
+    btn_alternar_tema.removeChild(btn_alternar_tema.children[0]);
+    if(esta_el_tema_claro){
+        //poner tema oscuro
+        html_tag.setAttribute('data-bs-theme','dark')
+        btn_alternar_tema.appendChild($.parseHTML('<i class="fa-solid fa-sun"></i>')[0])
+    }
+    else{
+        //poner tema claro
+        html_tag.setAttribute('data-bs-theme','light')
+        btn_alternar_tema.appendChild($.parseHTML('<i class="fa-solid fa-moon"></i>')[0])
+    }
+    esta_el_tema_claro = !esta_el_tema_claro
+}
+//configuro el botón
+$('#btn-alternar-tema').click(function(){
+    alternar_tema()
+})
+// -----------------------------------------------------------------------------------------
+
+//Creo los cards de los proyectos, y agrego el comportamiento necesario para exhibir y cerrar la descripción detallada de los mismos. 
+//Para esto voy a modelar los proyectos como objetos con titulo descripcion, descripción breve etc..
+//y crear los cards de los proyectos a través de js. además, esta sería una solución reutilizable y más flexible.
 
 proyectos = 
     [
@@ -31,31 +45,22 @@ proyectos =
         }
     ]
 
-document.getElementById('btn-cerrar-detalle').addEventListener('click', function(){
-    alternar_visibilidad_proyectos()
-    alternar_visibilidad_detalle()
-})
-$('#btn-alternar-tema').click(function(){
-    alternar_tema()
-})
-
-//alterna entre el tema claro y oscuro de boostrap
-function alternar_tema(){
-    let html_tag = $('html')[0];
-    let btn_alternar_tema = $('#btn-alternar-tema')[0];
-    btn_alternar_tema.removeChild(btn_alternar_tema.children[0]);
-    if(esta_el_tema_claro){
-        //poner tema oscuro
-        html_tag.setAttribute('data-bs-theme','dark')
-        btn_alternar_tema.appendChild($.parseHTML('<i class="fa-solid fa-sun"></i>')[0])
-    }
-    else{
-        //poner tema claro
-        html_tag.setAttribute('data-bs-theme','light')
-        btn_alternar_tema.appendChild($.parseHTML('<i class="fa-solid fa-moon"></i>')[0])
-    }
-    esta_el_tema_claro = !esta_el_tema_claro
-}
+//html usado para crear los cards que presentarán los proyectos,
+const html_proyecto =`
+<div class="col-sm-5 proyecto">
+    <div class="card h-100">
+        <div class="card-header">
+            <h5 class="card-title">Nuevo poryecto</h5>
+        </div>
+        <img src="robot-solid.svg" class="card-img-top w-50 mx-auto" alt="icono minimalista de robot">
+            <div class="card-body">
+                <p class="card-text">prueba de agregar proyecto con jquery</p>
+            </div>
+            <div class="card-footer d-flex justify-content-start">
+                <button class="btn btn-primary btn-mas-detalles"> Mas detalles</button>
+            </div>
+    </div>
+</div>`
 
 function alternar_visibilidad_proyectos(){
     let proyectos = document.getElementsByClassName('proyecto');
@@ -76,47 +81,33 @@ function poblar_detalle(titulo_proyecto, descripcion_proyecto){
     cuerpo.innerHTML = descripcion_proyecto;
 }
 
-const html_proyecto =`
-<div class="col-sm-5 proyecto">
-    <div class="card h-100">
-        <div class="card-header">
-            <h5 class="card-title">Nuevo poryecto</h5>
-        </div>
-        <img src="robot-solid.svg" class="card-img-top w-50 mx-auto" alt="icono minimalista de robot">
-            <div class="card-body">
-                <p class="card-text">prueba de agregar proyecto con jquery</p>
-            </div>
-            <div class="card-footer d-flex justify-content-start">
-                <button class="btn btn-primary btn-mas-detalles"> Mas detalles</button>
-            </div>
-    </div>
-</div>`
+//Uso el evento ready para crear los cards de los proyectos e insertarlos en la página
 let nuevo_proyecto;
 let btn_mas_detalles;
 $(document).ready(function(){
-//     nuevo_proyecto = $.parseHTML(html_proyecto);
-//     btn_mas_detalles = nuevo_proyecto[1].getElementsByClassName('btn-mas-detalles')[0];
-//     btn_mas_detalles.addEventListener('click', function(){
-//         poblar_detalle('Probando a ver si anda', 'esta es la descripcion');
-//         alternar_visibilidad_proyectos()
-//         alternar_visibilidad_detalle()
-//         })
-//     btn_mas_detalles.innerHTML = 'cambio??'
-//    $('#proyectos-row').append(nuevo_proyecto);
     proyectos.forEach(element => {
+        //creo un nuevo proyecto
         nuevo_proyecto = $.parseHTML(html_proyecto);
+        //configuro el proyecto con su título e imagen
         nuevo_proyecto[1].getElementsByClassName('card-title')[0].innerHTML = element.nombre;
         nuevo_proyecto[1].getElementsByClassName('card-text')[0].innerHTML = element.descripcion_corta;
         nuevo_proyecto[1].getElementsByClassName('card-img-top')[0].setAttribute('src', element.ruta_imagen);
         nuevo_proyecto[1].getElementsByClassName('card-img-top')[0].setAttribute('alt', element.descripcion_imagen);
+        //configuro el botón de detalles del proyecto para que exhiba la descripción detallada del mismo
         btn_mas_detalles = nuevo_proyecto[1].getElementsByClassName('btn-mas-detalles')[0];
         btn_mas_detalles.addEventListener('click', function(){
             poblar_detalle(element.nombre, element.descripcion_completa);
             alternar_visibilidad_proyectos()
             alternar_visibilidad_detalle()
             })
-        $('#proyectos-row').append(nuevo_proyecto); 
+            //agrego el poryecto a la página
+            $('#proyectos-row').append(nuevo_proyecto); 
     });
+});
+//configuro el botón de cerrar detalles
+document.getElementById('btn-cerrar-detalle').addEventListener('click', function(){
+    alternar_visibilidad_proyectos()
+    alternar_visibilidad_detalle()
 })
 
 
