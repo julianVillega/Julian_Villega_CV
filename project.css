@@ -1,11 +1,11 @@
-/* .equal-columns{
-    flex:1;
+#title-heading{
+    font-family: 'Montserrat', sans-serif;
+    font-style: italic;
 }
 
-#display-heading-proyectos{
-    text-decoration: underline 5%;
-    text-decoration-color: rgb(255,193,7);
-} */
+#cuerpo-detalle{
+    font-size:18px;
+}
 
 #hr-proyectos{
     width: 60%;

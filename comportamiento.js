@@ -1,6 +1,6 @@
 //Implemento la funcionalidad para alternar entre el tema claro y oscuro
 
-let esta_el_tema_claro = false;
+let esta_el_tema_claro = true;
 //alterna entre el tema claro y oscuro de boostrap
 function alternar_tema(){
     let html_tag = $('html')[0];
