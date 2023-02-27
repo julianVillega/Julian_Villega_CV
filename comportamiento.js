@@ -50,14 +50,14 @@ const html_proyecto =`
 <div class="col-sm-5 proyecto">
     <div class="card h-100">
         <div class="card-header">
-            <h5 class="card-title">Nuevo poryecto</h5>
+            <h5 class="card-title"></h5>
         </div>
-        <img src="robot-solid.svg" class="card-img-top w-50 mx-auto" alt="icono minimalista de robot">
+        <img src="robot-solid.svg" class="card-img-top w-50 mx-auto" alt="">
             <div class="card-body">
-                <p class="card-text">prueba de agregar proyecto con jquery</p>
+                <p class="card-text"></p>
             </div>
             <div class="card-footer d-flex justify-content-start">
-                <button class="btn btn-primary btn-mas-detalles"> Mas detalles</button>
+                <button class="btn btn-primary btn-mas-detalles"> Más detalles</button>
             </div>
     </div>
 </div>`
