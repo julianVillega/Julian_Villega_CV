@@ -7,6 +7,12 @@
     font-size:18px;
 }
 
+.justificar{
+    margin: 0;
+    /* text-indent: 2rem; */
+    text-align: justify;
+}
+
 #hr-proyectos{
     width: 60%;
     margin: 0 auto;
