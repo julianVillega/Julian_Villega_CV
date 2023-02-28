@@ -45,30 +45,40 @@
     <script src="comportamiento.js" defer></script>
     <section>
         <h1 class="display-1 text-center" id="title-heading">Julian Villega</h1>
-        <div class="container">
+        <div class="container-fluid">
             <div class="row justify-content-center gap-3">
                 <div class="col-sm-5 border border-warning border-3">
                     <h2 class="text-center">Formación</h2>
-                    <dl class="row text-start px-3">
+                    <dl class="row justify-content-between px-3 mb-1">
                         <dt class="col-sm-5">Formación Academica:</dt>
                         <dd class="col-sm-7">Actualmente me encuentro en el último año de la carrera Analista Programador Universitario de la UNLP</dd>
+                    </dl>
+                    <dl class="row justify-content-between px-3 mb-0">
                         <dt class="col-sm-5">Idiomas:</dt>
                         <dd class="col-sm-7">Portugués nativo<br>Español nativo<br>Ingles intermedio</dd>
                     </dl>
                 </div>
                 <div class="col-sm-5 border border-warning border-3">
                     <h2 class="text-center">Información personal</h2>
-                    <dl class="row justify-content-between text-start px-3">
-                        <dt class="col-sm-5">Nombre:</dt>
-                        <dd class="col-sm-5">Julian Villega</dd>
-                        <dt class="col-sm-5">Edad:</dt>
-                        <dd class="col-sm-5">25 años</dd>
-                        <dt class="col-sm-5">Nacionalidad:</dt>
-                        <dd class="col-sm-5">Argentina</dd>
-                        <dt class="col-sm-5">E-mail:</dt>
-                        <dd class="col-sm-5">julian.villega@gmail.com</dd>
-                        <dt class="col-sm-5">Teléfono:</dt>
-                        <dd class="col-sm-5">+5492213034175</dd>
+                    <dl class="row justify-content-between px-3 mb-1">
+                        <dt class="col-5">Nombre:</dt>
+                        <dd class="col-7 text-end">Julian Villega</dd>
+                    </dl>
+                    <dl class="row justify-content-arround px-3 mb-1">
+                        <dt class="col-6">Edad:</dt>
+                        <dd class="col-6 text-end">25 años</dd>
+                    </dl>
+                    <dl class="row justify-content-arround px-3 mb-1">
+                        <dt class="col-6">Nacionalidad:</dt>
+                        <dd class="col-6 text-end">Argentina</dd>
+                    </dl>
+                    <dl class="row justify-content-arround px-3 mb-1">
+                        <dt class="col-2">mail:</dt>
+                        <dd class="col-10 text-end">julian.villega@gmail.com</dd>
+                    </dl>
+                    <dl class="row justify-content-arround px-3 mb-1">
+                        <dt class="col-3">Teléfono:</dt>
+                        <dd class="col-9 text-end">+5492213034175</dd>
                     </dl>
                 </div>                
             </div>            
@@ -87,7 +97,7 @@
             <div class="col border rounded" id="col-detalle" hidden>
                 <h5 id="titulo-detalle" class="text-center mt-2"></h5>
                 <hr class="mt-0">
-                <p id="cuerpo-detalle"></p>
+                <p id="cuerpo-detalle" class="justificar"></p>
                 <hr>
                 <button class="btn btn-primary mb-3" id="btn-cerrar-detalle">Cerrar</button>
             </div>
